@@ -1,8 +1,6 @@
-// Reminder program of C++ fundamentals.
-#include <iostream>
-using namespace std;
+#include "hello.h"
 
 int main()
 {
-  cout << "Hello World!" << endl;
+  print_hello();
 }
