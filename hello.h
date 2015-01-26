@@ -1,7 +1,8 @@
 #include <iostream>
+using namespace std;
 
 void print_hello()
 {
-  std::string printme = "Hello World!";
-  std::cout << printme << std::endl;
+  string printme = "Hello World!";
+  cout << printme << endl;
 }
