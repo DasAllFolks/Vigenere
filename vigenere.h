@@ -1,7 +1,8 @@
 #include <iostream>
 using namespace std;
 
-string encrypt(string plaintext, string keyword)
+
+string encrypt(const string& plaintext, const string& keyword)
 {
   return "XXXX: Write me!";
 }
