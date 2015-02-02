@@ -1,5 +1,5 @@
 #include <iostream>
-#include "vigenere.h"
+#include "vigenere.hpp"
 
 using namespace std;
 
