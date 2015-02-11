@@ -5,5 +5,6 @@ using namespace std;
 
 string encrypt(const string& plaintext, const string& keyword)
 {
-  return "XXXX: Write me! Plaintext " + plaintext;
+  string capitalized = boost::algorithm::to_upper_copy<string>(plaintext);
+  return "XXXX: Write me! Plaintext " + capitalized;
 }
