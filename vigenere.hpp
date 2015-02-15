@@ -9,14 +9,13 @@ string encrypt(const string& plaintext, const string& keyword)
    * Cipher (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
 
-  string keyphrase = ""
-  int reps = plaintext.length() / keyword.length() + 1
-  for (int i = 0; i < plaintext.length() /
+  string keyphrase = "";
+  for (int i = 0; i < plaintext.length() / keyword.length() + 1; i++)
   {
-
+    keyphrase += keyword;
   }
 
-  string plaintext = boost::algorithm::to_upper_copy<string>(plaintext);
+  keyphrase.resize(plaintext.length());
 
-  return plaintext + " " keyword;
+  return boost::algorithm::to_upper_copy<string>(keyphrase);
 }
