@@ -3,10 +3,12 @@
 using namespace std;
 
 
-string encrypt(const string& plaintext_input, const string& keyword_input)
+string encrypt(const string& plaintext, const string& keyword)
 {
-  string keyword = boost::algorithm::to_upper_copy<string>(keyword_input);
-  string plaintext = boost::algorithm::to_upper_copy<string>(plaintext_input);
+  string keyword = boost::algorithm::to_upper_copy<string>(keyword);
+
+
+  string plaintext = boost::algorithm::to_upper_copy<string>(plaintext);
 
   return plaintext + " " keyword;
 }
