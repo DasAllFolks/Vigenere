@@ -21,7 +21,7 @@ string encrypt(const string& plaintext, const string& keyword)
   keyphrase.resize(plaintext.length());
 
   string ciphertext = "";
-  for (int i = 0; i < plaintext; i++)
+  for (int i = 0; i < plaintext.length(); i++)
   {
     start_index = alphabet.find(to_upper(plaintext[i]));
     advance_by = alphabet.find(keyphrase[i]);
