@@ -10,7 +10,7 @@ string encrypt(const string& plaintext, const string& keyword)
    * Cipher (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
 
-  string cap_keyword = to_upper(keyword)
+  string cap_keyword = to_upper(keyword);
   string keyphrase = "";
 
   for (int i = 0; i < plaintext.length() / keyword.length() + 1; i++)
@@ -20,7 +20,7 @@ string encrypt(const string& plaintext, const string& keyword)
 
   keyphrase.resize(plaintext.length());
 
-  string ciphertext = ""
+  string ciphertext = "";
   for (int i = 0; i < plaintext; i++)
   {
     start_index = alphabet.find(to_upper(plaintext[i]));
@@ -28,10 +28,10 @@ string encrypt(const string& plaintext, const string& keyword)
     ciphertext += alphabet[(start_index + advance_by) % alphabet.length()];
   }
 
-  return ciphertext
+  return ciphertext;
 }
 
 string decrypt(const string& plaintext, const string& keyword)
 {
-  return "XXXX: Write me!"
+  return "XXXX: Write me!";
 }
