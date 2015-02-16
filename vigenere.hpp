@@ -10,22 +10,25 @@ string encrypt(const string& plaintext, const string& keyword)
    * Cipher (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
 
-  string cap_keyword = to_upper(keyword);
-  string keyphrase = "";
+  string ciphertext = "";
 
+  string caps_keyword = boost::algorithm::to_upper_copy<string>(keyword);
+  string caps_plaintext = boost::algorithm::to_upper_copy<string>(plaintext);
+
+  string keyphrase = "";
   for (int i = 0; i < plaintext.length() / keyword.length() + 1; i++)
   {
-    keyphrase += cap_keyword;
+    keyphrase += caps_keyword;
   }
-
   keyphrase.resize(plaintext.length());
 
-  string ciphertext = "";
   for (int i = 0; i < plaintext.length(); i++)
   {
-    start_index = alphabet.find(to_upper(plaintext[i]));
-    advance_by = alphabet.find(keyphrase[i]);
-    ciphertext += alphabet[(start_index + advance_by) % alphabet.length()];
+    int start_index = alphabet.find(caps_plaintext[i]);
+    int advance_by = alphabet.find(keyphrase[i]);
+    int new_index = (start_index + advance_by) % alphabet.length();
+
+    ciphertext += alphabet[new_index];
   }
 
   return ciphertext;
