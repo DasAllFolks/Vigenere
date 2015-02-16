@@ -18,5 +18,18 @@ string encrypt(const string& plaintext, const string& keyword)
 
   keyphrase.resize(plaintext.length());
 
-  return boost::algorithm::to_upper_copy<string>(keyphrase);
+  string ciphertext = ""
+  for (int i = 0; i < plaintext; i++)
+  {
+    start_index = alphabet.find(plaintext[i]);
+    advance_by = alphabet.find(keyphrase[i]);
+    ciphertext += alphabet[(start_index + advance_by) % alphabet.length()];
+  }
+
+  return ciphertext
+}
+
+string decrypt(const string& plaintext, const string& keyword)
+{
+  return "XXXX: Write me!"
 }
