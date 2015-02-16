@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 string encrypt(const string& plaintext, const string& keyword)
 {
