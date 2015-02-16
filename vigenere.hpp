@@ -34,7 +34,7 @@ string encrypt(const string& plaintext, const string& keyword)
   return ciphertext;
 }
 
-string decrypt(const string& plaintext, const string& keyword)
+string decrypt(const string& ciphertext, const string& keyword)
 {
   return "XXXX: Write me!";
 }
