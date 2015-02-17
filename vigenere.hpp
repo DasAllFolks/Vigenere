@@ -6,8 +6,9 @@ const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 string encrypt(const string& plaintext, const string& keyword)
 {
-  /* Returns the plaintext encrypted using the given keyword and the Vigenere
-   * Cipher (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
+  /* Returns the ciphertext produced by encrypting the plaintext using the
+   * given keyword and the Vigenere Cipher
+   * (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
 
   string ciphertext = "";
