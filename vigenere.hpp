@@ -37,5 +37,10 @@ string encrypt(const string& plaintext, const string& keyword)
 
 string decrypt(const string& ciphertext, const string& keyword)
 {
+  /* Returns the plaintext produced by decrypting the ciphertext using the
+   * given keyword and the Vigenere Cipher
+   * (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
+   */
+
   return "XXXX: Write me!";
 }
