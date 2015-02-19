@@ -9,8 +9,19 @@ string get_keyphrase(const string& keyword, const string& text)
   /* Returns the Vigenere keyword of appropriate length (in all caps) for a
    * given keyword and text (either plaintext or ciphertext).
    */
+  string keyphrase = "";
+  size_t text_length = text.length();
 
-  return "TODO";
+  string caps_keyword = boost::algorithm::to_upper_copy<string>(keyword);
+
+  for (int i = 0; i < text_length / keyword.length() + 1; i++)
+  {
+    keyphrase += caps_keyword;
+  }
+
+  keyphrase.resize(text_length);
+
+  return keyphrase;
 }
 
 
@@ -22,16 +33,8 @@ string encrypt(const string& plaintext, const string& keyword)
    */
 
   string ciphertext = "";
-
-  string caps_keyword = boost::algorithm::to_upper_copy<string>(keyword);
   string caps_plaintext = boost::algorithm::to_upper_copy<string>(plaintext);
-
-  string keyphrase = "";
-  for (int i = 0; i < plaintext.length() / keyword.length() + 1; i++)
-  {
-    keyphrase += caps_keyword;
-  }
-  keyphrase.resize(plaintext.length());
+  string keyphrase = get_keyphrase(plaintext, keyword);
 
   for (int i = 0; i < plaintext.length(); i++)
   {
