@@ -41,6 +41,9 @@ string decrypt(const string& ciphertext, const string& keyword)
    * given keyword and the Vigenere Cipher
    * (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
+  string plaintext = "";
 
-  return "XXXX: Write me!";
+  // XXXX: Finish me!
+
+  return plaintext;
 }
