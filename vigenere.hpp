@@ -4,6 +4,16 @@ using namespace std;
 
 const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+string get_keyphrase(const string& keyword, const string& text)
+{
+  /* Returns the Vigenere keyword of appropriate length (in all caps) for a
+   * given keyword and text (either plaintext or ciphertext).
+   */
+
+  return "TODO";
+}
+
+
 string encrypt(const string& plaintext, const string& keyword)
 {
   /* Returns the ciphertext produced by encrypting the plaintext using the
