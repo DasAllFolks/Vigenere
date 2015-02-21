@@ -55,9 +55,18 @@ string decrypt(const string& ciphertext, const string& keyword)
    * (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
   string plaintext = "";
-  string keyphrase = (ciphertext, keyword);
+  string keyphrase = get_keyphrase(ciphertext, keyword);
 
-  // XXXX: Finish me!
+  string caps_ciphertext = boost::algorithm::to_upper_copy<string>(ciphertext);
+
+  for (int i = 0; i < ciphertext.length(); i++)
+  {
+    int ciphertext_index = alphabet.find(caps_ciphertext[i]);
+    int reverse_by = alphabet.find(keyphrase[i]);
+    int plaintext_index = (ciphertext_index - reverse_by) % alphabet.length();
+
+    plaintext += alphabet[plaintext_index];
+  }
 
   return plaintext;
 }
