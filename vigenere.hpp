@@ -38,11 +38,11 @@ string encrypt(const string& plaintext, const string& keyword)
 
   for (int i = 0; i < plaintext.length(); i++)
   {
-    int start_index = alphabet.find(caps_plaintext[i]);
+    int plaintext_index = alphabet.find(caps_plaintext[i]);
     int advance_by = alphabet.find(keyphrase[i]);
-    int new_index = (start_index + advance_by) % alphabet.length();
+    int ciphertext_index = (plaintext_index + advance_by) % alphabet.length();
 
-    ciphertext += alphabet[new_index];
+    ciphertext += alphabet[ciphertext_index];
   }
 
   return ciphertext;
