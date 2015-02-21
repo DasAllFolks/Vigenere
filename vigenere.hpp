@@ -55,6 +55,7 @@ string decrypt(const string& ciphertext, const string& keyword)
    * (http://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher).
    */
   string plaintext = "";
+  string keyphrase = (ciphertext, keyword);
 
   // XXXX: Finish me!
 
