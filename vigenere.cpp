@@ -5,5 +5,12 @@ using namespace std;
 
 int main()
 {
-  cout << encrypt("plaintext!", "keys") << endl;
+  string plaintext = "plaintext";
+  string key = "key";
+  cout << plaintext << endl;
+
+  string ciphertext = encrypt(plaintext, key);
+  cout << ciphertext << endl;
+
+  cout << decrypt(ciphertext, key) << endl;
 }
