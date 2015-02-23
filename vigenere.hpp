@@ -4,10 +4,10 @@ using namespace std;
 
 const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-string get_keyphrase(const string& keyword, const string& text)
+string get_keyphrase(const string& text, const string& keyword)
 {
   /* Returns the Vigenere keyword of appropriate length (in all caps) for a
-   * given keyword and text (either plaintext or ciphertext).
+   * given text (either plaintext or ciphertext) and keyword.
    */
   string keyphrase = "";
   size_t text_length = text.length();
