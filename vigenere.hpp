@@ -10,16 +10,15 @@ string get_keyphrase(const string& text, const string& keyword)
    * given text (either plaintext or ciphertext) and keyword.
    */
   string keyphrase = "";
-  size_t text_length = text.length();
-
   string caps_keyword = boost::algorithm::to_upper_copy<string>(keyword);
 
-  for (int i = 0; i < text_length / keyword.length() + 1; i++)
-  {
-    keyphrase += caps_keyword;
-  }
+  size_t keyword_length = keyword.length();
+  size_t text_length = text.length();
 
-  keyphrase.resize(text_length);
+  for (int i = 0; i < text_length; i++)
+  {
+    keyphrase += caps_keyword[i % keyword_length];
+  }
 
   return keyphrase;
 }
