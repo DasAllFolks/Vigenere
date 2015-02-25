@@ -3,6 +3,7 @@
 using namespace std;
 
 const string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const int alphabet_length = alphabet.length();
 
 string get_keyphrase(const string& text, const string& keyword)
 {
@@ -39,7 +40,7 @@ string encrypt(const string& plaintext, const string& keyword)
   {
     int plaintext_index = alphabet.find(caps_plaintext[i]);
     int advance_by = alphabet.find(keyphrase[i]);
-    int ciphertext_index = (plaintext_index + advance_by) % alphabet.length();
+    int ciphertext_index = (plaintext_index + advance_by) % alphabet_length;
 
     ciphertext += alphabet[ciphertext_index];
   }
@@ -61,7 +62,7 @@ string decrypt(const string& ciphertext, const string& keyword)
   {
     int ciphertext_index = alphabet.find(caps_ciphertext[i]);
     int reverse_by = alphabet.find(keyphrase[i]);
-    int plaintext_index = (ciphertext_index - reverse_by) % alphabet.length();
+    int plaintext_index = (ciphertext_index - reverse_by) % alphabet_length;
 
     plaintext += alphabet[plaintext_index];
   }
